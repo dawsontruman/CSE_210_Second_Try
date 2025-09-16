@@ -1,5 +1,5 @@
 # cse210-student-template
-This is the starter code for students in CSE 210.
+This is the starter code for students in CSE 210. One such student is Dawson Truman, who has already taken this class, but needs to retake it for a better grade.
 
 This repository contains the starter code for many different projects. They are arranged as follows:
 
