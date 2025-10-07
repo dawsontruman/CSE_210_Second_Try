@@ -7,7 +7,7 @@ public class Job
     private int _startYear;
     private int _endYear;
     /*
-    Pardon my encapsulation, I'm retaking this class
+    Pardon my encapsulation. I'm retaking this class
     so I'm already wired to write constructors and such.
     */
     public Job(string company, string jobTitle, int startYear, int endYear)
