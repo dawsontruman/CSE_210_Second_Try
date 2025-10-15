@@ -12,12 +12,6 @@ public class Prompt
         "Describe the most challenging situation I faced today, and how I overcame it."];
     public string GenerateRandomPrompt()
     {
-        /*
-        Is it appropriate for the prompt generator
-        to instantiate a new Random class object,
-        or should it be instantiated as an attribute of
-        the Prompt class?
-        */
         Random random = new Random();
         int randNum = random.Next(0,_prompts.Count());
         string prompt = _prompts[randNum];
