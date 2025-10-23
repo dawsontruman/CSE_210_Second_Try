@@ -15,18 +15,15 @@ class Program
         {
             Console.Clear();
             script1.Display();
-            Console.WriteLine("\nPress Enter to hide words: ");
+            Console.Write("\nPress Enter to hide words:");
             string input = Console.ReadLine();
-            if (input == "")
+            if (script1.CheckHidden())
             {
-                if (script1.CheckHidden())
-                {
-                    break;
-                }
-                else
-                {
-                    script1.HideRandomWords(3);
-                }
+                break;
+            }
+            else if (input == "")
+            {
+                script1.HideRandomWords(3);
             }
             else
             {

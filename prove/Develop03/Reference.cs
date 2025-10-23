@@ -25,11 +25,11 @@ public class Reference
     {
         if (_verseEnd == 0)
         {
-            return $"{_book} {_chapter}: {_verseStart}";
+            return $"{_book} {_chapter}:{_verseStart}";
         }
         else
         {
-            return $"{_book} {_chapter}: {_verseStart}-{_verseEnd}";
+            return $"{_book} {_chapter}:{_verseStart}-{_verseEnd}";
         }
     }
 }
