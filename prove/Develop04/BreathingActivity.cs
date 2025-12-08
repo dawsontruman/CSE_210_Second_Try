@@ -11,6 +11,23 @@ public class BreathingActivity : Activity
     // description copied from project specification
     public void Run()
     {
-        
+        Console.Clear();
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(_duration);
+        while (true)
+        {
+            DateTime currentTime = DateTime.Now;
+            if (currentTime < endTime){
+                Console.Clear();
+                Console.Write("Breath in...");
+                CountDown(_inhaleTime);
+                Console.Write("\nBreathe out...");
+                CountDown(_exhaleTime);
+            }
+            else
+            {
+                break;
+            }
+        }
     }
 }

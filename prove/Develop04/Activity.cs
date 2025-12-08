@@ -1,7 +1,7 @@
 using System;
 public class Activity
 {
-    private int _duration;
+    protected int _duration;
     private string _activityName;
     /*
     A needed change from the initial design, each activity has a fixed
@@ -24,7 +24,7 @@ public class Activity
             Console.Clear();
             Console.WriteLine($"Welcome to the {_activityName}.");
             Console.WriteLine(_description);
-            Console.WriteLine("Please enter a duration for this activity: ");
+            Console.Write("Please enter a duration for this activity: ");
             try
             {
                 int duration = int.Parse(Console.ReadLine());
@@ -36,10 +36,15 @@ public class Activity
                 continue;
             }
         }
+        Console.Clear();
+        Console.Write("Get Ready...");
+        CountDown(3);
     }
     public void DisplayEndMessage()
     {
-        Console.WriteLine($"This concludes the {_activityName}.");
+        Console.Clear();
+        Console.Write($"This concludes the {_activityName}. ");
+        CountDown(3);
     }
     public void Spinner(int seconds)
     {

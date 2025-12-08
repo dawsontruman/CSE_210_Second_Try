@@ -4,9 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.Clear();
         while (true)
         {
+            Console.Clear();
             Console.WriteLine("Welcome to the Mindfulness Program!\n");
             Console.WriteLine("1. Breathing Activity");
             Console.WriteLine("2. Reflection Activity");
@@ -21,25 +21,22 @@ class Program
                 breath.DisplayStartMessage();
                 breath.Run();
                 breath.DisplayEndMessage();
-                Console.Clear();
             }
             // 2. Reflection Activity
             else if (select == "2")
             {
-                ReflectionActivity reflect = new ReflectionActivity(0, 15);
+                ReflectionActivity reflect = new ReflectionActivity(0, 10);
                 reflect.DisplayStartMessage();
                 reflect.Run();
                 reflect.DisplayEndMessage();
-                Console.Clear();
             }
             // 3. Listing Activity
             else if (select == "3")
             {
-                ListingActivity list = new ListingActivity(0);
+                ListingActivity list = new ListingActivity(0, 5);
                 list.DisplayStartMessage();
                 list.Run();
                 list.DisplayEndMessage();
-                Console.Clear();
             }
             // 4. Quit.
             else if (select == "4")
@@ -48,7 +45,6 @@ class Program
             }
             else
             {
-                Console.Clear();
                 continue;
             }
         }

@@ -28,6 +28,22 @@ public class ReflectionActivity : Activity
     // description copied from project specification
     public void Run()
     {
-
+        Console.Clear();
+        // get a random prompt and display it
+        Random rand = new Random();
+        string prompt = _reflectionPrompts[rand.Next(0,_reflectionPrompts.Count)];
+        Console.WriteLine(prompt);
+        // mark start and end time
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(_duration);
+        // loop displaying new questions with pauses until current time exceeds end time
+        DateTime currentTime = DateTime.Now;
+        while (currentTime < endTime)
+        {
+            string quest = _reflectionQuestions[rand.Next(0,_reflectionQuestions.Count)];
+            Console.Write($"\n{quest}");
+            Spinner(_reflectionTime);
+            currentTime = DateTime.Now;
+        }
     }
 }
