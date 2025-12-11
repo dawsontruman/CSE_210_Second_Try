@@ -19,19 +19,25 @@ public class ChecklistGoal : Goal
         if (_progress == _target)
         {
             AddPoints(_completionPoints);
-            MarkComplete();
         }
         else
         {
             AddPoints(_checkPoints);
         }
     }
-    public int ReturnProgress()
+    public override bool IsComplete()
     {
-        return _progress;
+        if (_progress >= _target)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-    public int ReturnTarget()
+    public override string ReturnProgressString()
     {
-        return _target;
+        return $"{_progress}/{_target}";
     }
 }

@@ -1,29 +1,28 @@
 using System;
 
-public class Goal
+public abstract class Goal
 {
-    private bool _complete;
+    // instead of a boolean complete attribute, we'll use integers for progress and target
+    // the IsComplete() method below gives us a bool we can check
     private int _points;
     private string _description;
     public Goal(string description)
     {
         _description = description;
     }
-    public virtual void RecordEvent() { }
-    public bool IsComplete()
+    public abstract void RecordEvent();
+    public abstract bool IsComplete();
+    public void AddPoints(int points)
     {
-        return _complete;
-    }
-    public void MarkComplete()
-    {
-        _complete = true;
+        _points += points;
     }
     public int ReturnPoints()
     {
         return _points;
     }
-    public void AddPoints(int points)
+    public string ReturnDescription()
     {
-        _points += points;
+        return _description;
     }
+    public abstract string ReturnProgressString();
 }

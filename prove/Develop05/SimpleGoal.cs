@@ -1,30 +1,7 @@
 using System;
 
-public class SimpleGoal : Goal
+// lol fam I realized a Simple Goal is just a checklist goal with a target of 1 such that it redeems the completion points on the first event
+public class SimpleGoal : ChecklistGoal
 {
-    private int _completionPoints;
-    private bool _isComplete;
-    public SimpleGoal(string description, int completionPoints) : base(description)
-    {
-        _completionPoints = completionPoints;
-    }
-    public override void RecordEvent()
-    {
-        AddPoints(_completionPoints);
-    }
-    public override bool IsComplete()
-    {
-        return _isComplete;
-    }
-    public override string ReturnProgressString()
-    {
-        if (_isComplete)
-        {
-            return "1/1";
-        }
-        else
-        {
-            return "0/1";
-        }
-    }
+    public SimpleGoal(string description, int completionPoints) : base(description, completionPoints, 0, 1) { }
 }
