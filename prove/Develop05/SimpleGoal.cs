@@ -3,6 +3,7 @@ using System;
 public class SimpleGoal : Goal
 {
     private int _completionPoints;
+    private bool _isComplete;
     public SimpleGoal(string description, int completionPoints) : base(description)
     {
         _completionPoints = completionPoints;
@@ -10,6 +11,20 @@ public class SimpleGoal : Goal
     public override void RecordEvent()
     {
         AddPoints(_completionPoints);
-        MarkComplete();
+    }
+    public override bool IsComplete()
+    {
+        return _isComplete;
+    }
+    public override string ReturnProgressString()
+    {
+        if (_isComplete)
+        {
+            return "1/1";
+        }
+        else
+        {
+            return "0/1";
+        }
     }
 }

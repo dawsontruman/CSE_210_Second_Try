@@ -15,6 +15,23 @@ public class ChecklistGoal : Goal
     }
     public override void RecordEvent()
     {
-        base.RecordEvent();
+        _progress += 1;
+        if (_progress == _target)
+        {
+            AddPoints(_completionPoints);
+            MarkComplete();
+        }
+        else
+        {
+            AddPoints(_checkPoints);
+        }
+    }
+    public int ReturnProgress()
+    {
+        return _progress;
+    }
+    public int ReturnTarget()
+    {
+        return _target;
     }
 }
