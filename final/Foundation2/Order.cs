@@ -7,6 +7,7 @@ public class Order
     public Order(Customer customer)
     {
         _customer = customer;
+        _products = new List<Product>();
     }
     public void AddProduct(Product product)
     {
@@ -19,14 +20,27 @@ public class Order
         {
             total += product.Cost();
         }
-        return total;
+        if (_customer.InUSA())
+        {
+            total += 500;
+        }
+        else
+        {
+            total += 3500;
+        }
+        return total; // prices in cents
     }
     public string PackingLabel()
     {
-        return $"";
+        string label = "";
+        foreach (Product product in _products)
+        {
+            label = label + product.PackingLabelSegment() + "\n";
+        }
+        return label;
     }
     public string ShippingLabel()
     {
-        return $"";
+        return _customer.ShippingLabelSegment();
     }
 }

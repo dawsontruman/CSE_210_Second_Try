@@ -19,7 +19,7 @@ class Program
         Console.WriteLine();
 
         Video video3 = new Video("Programming with Classses", "Brother_Took", 1023);
-        video3.AddComment(new Comment("GandalfTheWhite","Fool of a Took! These inheritance chains are too long!"));
+        video3.AddComment(new Comment("GandalfTheGrey","Fool of a Took! These inheritance chains are too long!"));
         video3.AddComment(new Comment("the_real_Denethor","I release you from my service. Go now and write whatever classes seem best to you."));
         video3.AddComment(new Comment("dawsontruman", "Second breakfast video when?"));
         video3.Display();

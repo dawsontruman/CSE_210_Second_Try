@@ -13,4 +13,8 @@ public class Customer
     {
         return _address.InUSA();
     }
+    public string ShippingLabelSegment()
+    {
+        return $"{_name}\n{_address.AddressString()}";
+    }
 }

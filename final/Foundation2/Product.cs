@@ -17,4 +17,8 @@ public class Product
     {
         return _unitPrice*_quantity;
     }
+    public string PackingLabelSegment()
+    {
+        return $"{_name} #{_productID}";
+    }
 }
